@@ -1,0 +1,218 @@
+:root{
+    --main-color:#7193ca;
+    --logo-color:#a8bcde;
+    --nav-color:#cdd9ec;
+    --top-color:#dfcbaa;
+    --right-color:#c9a870;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+ul li{
+    list-style: none;
+}
+body{
+    display: flex;
+}
+#left{
+    width: 200px;
+    height: 100%;
+    background-color:var(--nav-color);
+    position: fixed;
+    border-right: 1px solid var(--nav-color);
+    overflow: hidden;
+    
+}
+#left:hover{
+    overflow: clip scroll;
+    
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#left #logo{
+    width: 100%;
+    height: 120px;
+    background-color: var(--nav-color);
+    /* padding-right: 17px; */
+    box-sizing: border-box;
+}
+#left #logo #tab{
+    display: none;
+}
+#left #logo .logo_text{
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+    line-height: 120px;
+    cursor: default;
+}
+#left #nav{
+    width: 100%;
+    height: 800px;
+    /* padding-right: 17px; */
+    box-sizing: border-box;
+}
+#left:hover #logo{
+    padding-right: 0px;
+}
+#left:hover #nav{
+    padding-right: 0px;
+}
+#left #nav .nav_son{
+    /* width: 100%; */
+    width: 100%;
+    height: 60px;
+    background-color: var(--nav-color);
+    /* border:1px solid black; */
+    box-sizing: border-box;
+    border-bottom: 0px;
+    text-align: center;
+    line-height: 60px;
+}
+#left #nav .nav_son:last-child{
+    width: 100%;
+    height: 60px;
+    background-color: var(--nav-color);
+    /* border-bottom: 1px solid black; */
+}
+#left #nav .nav_son a{
+    display: block;
+    width: 100%;
+    height: 60px;
+}
+ 
+#left #nav .nav_son:first-child{
+    background-color: var(--logo-color);
+}
+#right{
+    width: 100%;
+    height: 50px;
+    background-color: var(--top-color);
+    margin-left: 200px;
+}
+#right #flex_box_top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px #c9a870 solid;
+    /* position: relative; */
+}
+#right #flex_box_top #list{
+    /* width: 60%; */
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+
+}
+#right #flex_box_top #list div{
+    width: 120px;
+    height: 50px;
+    background-color: var(--top-color);
+    padding: 0 20px;
+    line-height: 50px;
+    text-align: center;
+    border-right: 1px solid var(--right-color);
+    box-sizing: border-box;
+}
+#right #flex_box_top #list div a{
+    display: block;
+    width: 100%;
+}
+#right #flex_box_top #name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+    position: sticky;
+    right: 40px;
+    cursor: default;
+    font-size: 12px;
+    /* top: 20px; */
+}
+
+#right #flex_box_top #name button{
+   margin-left: 10px;
+   padding: 5px 10px;
+   border-radius: 5%;
+   border: 1px solid var(--main-color);
+   background-color: var(--main-color);
+}
+#right #flex_box_middle{
+    /* width: 100%; */
+    width:100%;
+    height: 40px;
+    background-color: #d6d6d6;
+    line-height: 40px;
+    font-size: 12px;
+    padding-left: 40px;
+    border-bottom: 1px solid #cecece;
+    box-sizing: border-box;
+    cursor: default;
+}
+#flex_box_bottom{
+    /* width: 100%; */
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap:wrap;
+    overflow: hidden;
+}
+#flex_box_bottom .bottom_son{
+    width: calc(25% - 10px);
+    height: 200px;
+    background-color: #7193ca;
+    margin: 5px;
+    cursor: pointer;
+}
+#flex_box_bottom #random{
+    width: calc(25% - 10px);
+    height: 200px;
+    background-image: url(./img/random.png);
+    background-size: cover;
+    margin: 5px;
+    cursor: pointer;
+}
+#flex_box_bottom .bottom_son:hover{
+    background-color: #a8bcde;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-name: ScaleHover;
+    transform: scale(1.05);
+}
+@keyframes ScaleHover{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+#flex_box_bottom .bottom_son:not(:hover){
+    /* background-color: #a8bcde; */
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-name: ScaleNotHover;
+}
+@keyframes ScaleNotHover{
+    0%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+

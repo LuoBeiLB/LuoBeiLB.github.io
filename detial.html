@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组元素随机分行显示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .item {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>数组元素随机分行显示</h1>
+    <button onclick="splitArrayRandomly()">点击随机分配元素</button>
+    <div id="topRow" class="row"></div>
+    <div id="bottomRow" class="row"></div>
+
+    <script>
+        // 示例数组
+        const myArray = ['周嘉乐','张贵林','陈志豪','奚兴军','寒月','肖泽宇','吴畏','8','9','10'];
+
+        function splitArrayRandomly() {
+            const topRow = document.getElementById('topRow');
+            const bottomRow = document.getElementById('bottomRow');
+            // 清空之前的内容
+            topRow.innerHTML = '';
+            bottomRow.innerHTML = '';
+
+            // 复制原数组，避免修改原数组
+            const shuffledArray = [...myArray];
+            // 打乱数组顺序
+            for (let i = shuffledArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+            }
+
+            const halfLength = Math.floor(shuffledArray.length / 2);
+            // 填充上一行
+            for (let i = 0; i < halfLength; i++) {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+                itemDiv.textContent = shuffledArray[i];
+                topRow.appendChild(itemDiv);
+            }
+            // 填充下一行
+            for (let i = halfLength; i < shuffledArray.length; i++) {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+                itemDiv.textContent = shuffledArray[i];
+                bottomRow.appendChild(itemDiv);
+            }
+        }
+    </script>
+</body>
+
+</html>
