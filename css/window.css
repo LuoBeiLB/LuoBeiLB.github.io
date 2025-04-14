@@ -180,7 +180,7 @@ body{
 #flex_box_bottom #random{
     width: calc(25% - 10px);
     height: 200px;
-    background-image: url(./img/random.png);
+    background-image: url(../img/random.png);
     background-size: cover;
     margin: 5px;
     cursor: pointer;
@@ -214,5 +214,7 @@ body{
         transform: scale(1);
     }
 }
-
+.cursor{
+    cursor: pointer;
+}
 

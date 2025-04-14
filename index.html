@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>练习的5.25页面布局</title>
-    <link rel="stylesheet" href="./index.css" media=" screen  and (min-width:1047px) and (max-width:1873px)">
-    <link rel="stylesheet" href="./index2.css" media="screen and (min-width:0px) and (max-width:1047px)">
+    <link rel="stylesheet" href="./css/window.css" media=" screen  and (min-width:1047px) and (max-width:1873px)">
+    <link rel="stylesheet" href="./css/phone.css" media="screen and (min-width:0px) and (max-width:1047px)">
 </head>
+
 <body>
     <div id="left">
         <div id="logo">
             <!-- h5 -->
             <h1 href="#" class="logo_text">LOGO</h1>
             <!-- app -->
-             <div id="tab">
+            <div id="tab">
                 <div id="Tab_left">
                     <div id="tool"></div>
                 </div>
@@ -21,7 +22,7 @@
                     <div id="pic"></div>
                     <div id="name">Arry</div>
                 </div>
-             </div>
+            </div>
         </div>
         <div id="AFTER">
             <div id="nav">
@@ -45,7 +46,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div id="right">
         <div id="flex_box_top">
@@ -56,9 +57,11 @@
                 <div><a href="#">内容管理</a></div>
             </div>
             <div id="name">
-                <div id="name_user_localtion">当前用户：Arry , 身份：系统管理员</div>
+                <div id="name_user_location">欢迎您，用户名</div>
+                <div id="pleaselogin">请先登录</div>
                 <div>
-                    <button type="button">退出</button>
+                    <button type="button" id="login" onclick="gotologin()" class="cursor">登录</button>
+                    <button type="button" id="loginout" onclick="gotologout()" class="cursor">退出登录</button>
                 </div>
             </div>
         </div>
@@ -72,63 +75,10 @@
             <div class="bottom_son"></div>
             <div class="bottom_son"></div>
             <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-            <div class="bottom_son"></div>
-        </div> 
+        </div>
     </div>
 </body>
-<script src="./index.js"></script>
+
 </html>
+<script src="./js/islogin.js"></script>
+<script src="./js/index.js"></script>

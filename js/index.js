@@ -1,5 +1,4 @@
 let nav_a = document.getElementsByClassName('nav_son');
-console.log(nav_a);
 
 nav_a[0].style.background = 'var(--logo-color)';
 
@@ -28,7 +27,6 @@ left_tool.addEventListener('click',()=>{
     let alfter = document.querySelector('#AFTER');
     // let left_after = window.getComputedStyle(left,":after")
     // console.log(left_after)
-    console
     if(change){
         nav.style.animationName='scrollLeft'
         nav.style.left='0px'
@@ -45,8 +43,9 @@ left_tool.addEventListener('click',()=>{
 })
 
 let bottom_son = document.querySelectorAll('.bottom_son');
-for(let i = 0;i<bottom_son.length-1;i++){
-    bottom_son[i].addEventListener('click',()=>{
-        window.location.href = "./detial.html?name=" + bottom_son[i].id; 
+for (let index = 0; index < bottom_son.length; index++) {
+    const element = bottom_son[index];
+    element.addEventListener('click',()=>{
+        window.location.href = "./detial.html?name="+ element.id; 
     })
 }

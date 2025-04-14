@@ -1,0 +1,27 @@
+{
+  "name": "luobei.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "luobeilb"
+  ],
+  "homepage": "https://github.com/LuoBeiLB/LuoBeiLB.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/LuoBeiLB/LuoBeiLB.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuoBeiLB/LuoBeiLB.github.io.git"
+  },
+  "license": "ISC",
+  "author": "luobei",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

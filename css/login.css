@@ -1,0 +1,68 @@
+body {
+    background-image: url('/img/login.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 1;
+    width: 100%;
+    max-width: 28rem;
+}
+
+.input-field {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    width: calc(100% - 2rem);
+    margin-bottom: 1rem;
+}
+
+.login-button {
+    background-color: #4F46E5;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #4338CA;
+}
+.other{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 1rem;
+    font-size: 12px;
+}
+.other a{
+    margin-left: 5px;
+    cursor:pointer;
+}
+#register{
+    display: none;
+}
+#username{
+    display: none;
+}
