@@ -89,9 +89,9 @@ body{
     height: 60px;
 }
  
-#left #nav .nav_son:first-child{
+/* #left #nav .nav_son:first-child{
     background-color: var(--logo-color);
-}
+} */
 #right{
     width: 100%;
     height: 50px;
@@ -133,12 +133,11 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 20px;
     position: sticky;
     right: 40px;
     cursor: default;
     font-size: 12px;
-    /* top: 20px; */
+    margin: 10px 20px 10px 20px;
 }
 
 #right #flex_box_top #name button{
@@ -149,7 +148,6 @@ body{
    background-color: var(--main-color);
 }
 #right #flex_box_middle{
-    /* width: 100%; */
     width:100%;
     height: 40px;
     background-color: #d6d6d6;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/window.css" media=" screen  and (min-width:1047px) and (max-width:1873px)">
+    <link rel="stylesheet" href="../css/phone.css" media="screen and (min-width:0px) and (max-width:1047px)">
+</head>
+<body>
+    <div id="left">
+        <div id="logo">
+            <!-- h5 -->
+            <h1 href="#" class="logo_text">LOGO</h1>
+            <!-- app -->
+            <div id="tab">
+                <div id="Tab_left">
+                    <div id="tool"></div>
+                </div>
+                <div id="right">
+                    <div id="pic"></div>
+                    <div id="name">Arry</div>
+                </div>
+            </div>
+        </div>
+        <div id="AFTER">
+            <div id="nav">
+                <div class="nav_son">
+                    <a href="../index.html">工具</a>
+                </div>
+                <div class="nav_son">
+                    <a href="./note.html">笔记</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id ="notedetail-right">
+        <h2 id="note_title">11</h2>
+        <p id="note_content">22</p>
+    </div>
+</body>
+</html>
+<style>
+    #left #nav .nav_son:nth-child(2){
+        background-color: var(--logo-color);
+    }
+    #notedetail-right{
+        padding: 20px;
+        background-color: var(--logo-color);
+        margin-left: 200px;
+        width: calc(100% - 200px);
+        text-align: center;
+    }
+</style>
+<script src="../js/notedetail.js"></script>

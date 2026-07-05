@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机分配队伍</title>
+    <link rel="stylesheet" href="../css/window.css" media="screen and (min-width:1047px) and (max-width:1873px)">
+    <link rel="stylesheet" href="../css/phone.css" media="screen and (min-width:0px) and (max-width:1047px)">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        
+
+        #flex_box_bottom {
+            display: block;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .detail-main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .detail-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .detail-card h2 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .detail-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .detail-actions button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #7193ca;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .detail-actions button:hover {
+            background-color: #5c7db2;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .item {
+            padding: 10px 20px;
+            background-color: #e8e8e8;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-height: 100px;
+            min-width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item-color {
+            background-color: #7193ca;
+            color: white;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .item-color::after {
+            content: "×";
+            position: absolute;
+            top: 4px;
+            right: 6px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #AddItem {
+            display: none;
+        }
+
+        .mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .AddItemBackground {
+            background-color: white;
+            min-width: 600px;
+            border-radius: 20px;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        #AddItemShow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #AddItemButton {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        #AddItemText {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="left">
+        <div id="logo">
+            <h1 href="#" class="logo_text">LOGO</h1>
+            <div id="tab">
+                <div id="Tab_left">
+                    <div id="tool"></div>
+                </div>
+                <div id="right">
+                    <div id="pic"></div>
+                    <div id="name">Arry</div>
+                </div>
+            </div>
+        </div>
+        <div id="AFTER">
+            <div id="nav">
+                <div class="nav_son">
+                    <a href="/index.html">工具</a>
+                </div>
+                <div class="nav_son">
+                    <a href="/html/note.html">笔记</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="right">
+        <div id="flex_box_top">
+            <div id="list">
+                <!-- <div><a href="#">工具</a></div>
+                <div><a href="#">界面管理</a></div>
+                <div><a href="#">栏目管理</a></div>
+                <div><a href="#">内容管理</a></div> -->
+            </div>
+            <div id="name">
+                <div id="name_user_location">欢迎您，用户名</div>
+                <div id="pleaselogin">请先登录</div>
+                <div>
+                    <button type="button" id="login" onclick="gotologin()" class="cursor">登录</button>
+                    <button type="button" id="loginout" onclick="gotologout()" class="cursor">退出登录</button>
+                </div>
+            </div>
+        </div>
+        <div id="flex_box_middle">
+            您当前所在位置：首页 > 后台中心 > 随机分配
+        </div>
+        <div id="flex_box_bottom">
+            <div class="detail-main">
+                <div class="detail-card">
+                    <h2>随机分配队伍</h2>
+                    <div class="detail-actions">
+                        <button onclick="AddArrayItem()">点击添加元素</button>
+                        <button onclick="splitArrayRandomly()">点击随机分配元素</button>
+                    </div>
+                </div>
+
+                <div id="AddItem">
+                    <div class="mask">
+                        <div class="AddItemBackground">
+                            <div id="AddItemShow"></div>
+                            <div id="AddItemButton">
+                                <input type="text" placeholder="请输入名称" id="AddItemText">
+                                <button onclick="AddItemButtonAdd()">添加</button>
+                                <button onclick="AddItemButtonClose()">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div id="topRow" class="row"></div>
+                    <div id="bottomRow" class="row"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/islogin.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/render.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            const AddItemShow = document.getElementById('AddItemShow');
+            if (!AddItemShow) return;
+
+            AddItemShow.addEventListener('click', function (e) {
+                const selectedName = e.target.getAttribute('data-name');
+                if (!selectedName) return;
+
+                myArray = myArray.filter(item => item !== selectedName);
+                const dom = document.getElementById('AddItemShow');
+                const css = 'item item-color';
+                render(myArray, dom, css);
+            });
+        });
+
+        let myArray = ['user1', 'user2', 'user3', 'user4', 'user5'];
+
+        window.onload = () => {
+            const father = document.getElementById('AddItemShow');
+            for (let i = 0; i < myArray.length; i++) {
+                const child = document.createElement('div');
+                child.classList.add('item', 'item-color');
+                child.dataset.name = myArray[i];
+                child.textContent = myArray[i];
+                father.appendChild(child);
+            }
+        };
+
+        function splitArrayRandomly() {
+            const topRow = document.getElementById('topRow');
+            const bottomRow = document.getElementById('bottomRow');
+            topRow.innerHTML = '';
+            bottomRow.innerHTML = '';
+
+            const shuffledArray = [...myArray];
+            for (let i = shuffledArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+            }
+
+            const halfLength = Math.floor(shuffledArray.length / 2);
+            for (let i = 0; i < halfLength; i++) {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+                itemDiv.textContent = shuffledArray[i];
+                topRow.appendChild(itemDiv);
+            }
+            for (let i = halfLength; i < shuffledArray.length; i++) {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+                itemDiv.textContent = shuffledArray[i];
+                bottomRow.appendChild(itemDiv);
+            }
+        }
+
+        function AddArrayItem() {
+            const AddItem = document.getElementById('AddItem');
+            AddItem.style.display = 'block';
+        }
+
+        function AddItemButtonClose() {
+            const AddItem = document.getElementById('AddItem');
+            AddItem.style.display = 'none';
+        }
+
+        function AddItemButtonAdd() {
+            const name = document.getElementById('AddItemText').value.trim();
+            if (!name) return;
+            myArray.push(name);
+            const dom = document.getElementById('AddItemShow');
+            const css = 'item item-color';
+            render(myArray, dom, css);
+            document.getElementById('AddItemText').value = '';
+        }
+    </script>
+</body>
+<style>
+    #left #nav .nav_son:nth-child(1){
+        background-color: var(--logo-color);
+    }
+</style>
+</html>

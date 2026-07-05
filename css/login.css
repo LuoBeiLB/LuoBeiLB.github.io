@@ -1,5 +1,12 @@
+:root{
+    --main-color:#7193ca;
+    --logo-color:#a8bcde;
+    --nav-color:#cdd9ec;
+    --top-color:#dfcbaa;
+    --right-color:#c9a870;
+}
 body {
-    background-image: url('/img/login.jpg');
+    background: var( --right-color );
     background-size: cover;
     background-position: center;
     display: flex;

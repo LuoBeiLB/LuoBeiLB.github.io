@@ -1,6 +1,13 @@
 // 提取基础 URL
 const BASE_URL = 'http://localhost:3000';
 
+let other = document.querySelector("#other");
+let login = document.querySelector("#login");
+let username = document.querySelector("#username");
+let register = document.querySelector("#register");
+let font = document.querySelector("#font");
+let backlogin = document.querySelector("#backlogin");
+
 // 封装获取表单数据的函数
 function getFormData(fields) {
     const formData = new URLSearchParams();
@@ -26,7 +33,7 @@ async function postRequest(url, formData) {
 }
 
 // 登录函数
-async function login() {
+async function fn_login() {
     const formData = getFormData(['password', 'email']);
     try {
         const response = await postRequest('/auth/login', formData);
@@ -64,16 +71,16 @@ async function gotoregist() {
 }
 
 // 切换到注册页面函数
-function register() {
-    const other = document.querySelector("#other");
-    const login = document.querySelector("#login");
-    const username = document.querySelector("#username");
-    const register = document.querySelector("#register");
-    const font = document.querySelector("#font");
+function fn_register() {
     font.innerHTML = "注册";
     login.style.display = "none";
     username.style.display = "block";
     register.style.display = "block";
-    other.style.display = "none";
 }
-    
+
+function fn_backlogin() {
+    font.innerHTML = "登录";
+    login.style.display = "block";
+    username.style.display = "none";
+    register.style.display = "none";
+}

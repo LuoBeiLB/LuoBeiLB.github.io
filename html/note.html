@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuobeiLB</title>
-    <link rel="stylesheet" href="./css/window.css" media=" screen  and (min-width:1047px) and (max-width:1873px)">
-    <link rel="stylesheet" href="./css/phone.css" media="screen and (min-width:0px) and (max-width:1047px)">
+    <title>练习的5.25页面布局</title>
+    <link rel="stylesheet" href="../css/window.css" media=" screen  and (min-width:1047px) and (max-width:1873px)">
+    <link rel="stylesheet" href="../css/phone.css" media="screen and (min-width:0px) and (max-width:1047px)">
 </head>
 
 <body>
@@ -28,14 +27,13 @@
         <div id="AFTER">
             <div id="nav">
                 <div class="nav_son">
-                    <a href="index.html">工具</a>
+                    <a href="../index.html">工具</a>
                 </div>
                 <div class="nav_son">
-                    <a href="./html/note.html">笔记</a>
+                    <a href="./note.html">笔记</a>
                 </div>
             </div>
         </div>
-
     </div>
     <div id="right">
         <div id="flex_box_top">
@@ -58,16 +56,17 @@
             您当前所在位置：首页 > 后台中心
         </div>
         <div id="flex_box_bottom">
-            <div class="bottom_son" data-name="random">随机分配</div>
+            <div class="bottom_son" data-name="firstnote" data-id="0">开篇笔记</div>
+            <div class="bottom_son" data-name="firstnote" data-id="1">测试笔记</div>
         </div>
     </div>
 </body>
 
 </html>
 <style>
-    #left #nav .nav_son:nth-child(1) {
+    #left #nav .nav_son:nth-child(2){
         background-color: var(--logo-color);
     }
 </style>
-<script src="./js/islogin.js"></script>
-<script src="./js/index.js"></script>
+<script src="../js/islogin.js"></script>
+<script src="../js/index.js"></script>

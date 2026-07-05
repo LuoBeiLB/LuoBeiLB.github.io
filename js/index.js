@@ -1,6 +1,6 @@
 let nav_a = document.getElementsByClassName('nav_son');
 
-nav_a[0].style.background = 'var(--logo-color)';
+// nav_a[0].style.background = 'var(--logo-color)';
 
 for (let index = 0; index < nav_a.length; index++) {
     const element = nav_a[index];
@@ -45,7 +45,13 @@ left_tool.addEventListener('click',()=>{
 let bottom_son = document.querySelectorAll('.bottom_son');
 for (let index = 0; index < bottom_son.length; index++) {
     const element = bottom_son[index];
-    element.addEventListener('click',()=>{
-        window.location.href = "./detial.html?name="+ element.id; 
+    element.addEventListener('click',(e)=>{
+        const dataName = e.target.getAttribute('data-name');
+        if(dataName === 'random'){
+            window.location.href = "/html/random.html";
+        }else if(dataName === 'firstnote'){
+            const dataId = e.target.getAttribute('data-id');
+            window.location.href = `/html/notedetail.html?id=${dataId}`;
+        }
     })
 }
