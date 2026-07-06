@@ -169,11 +169,14 @@ body{
     overflow: hidden;
 }
 #flex_box_bottom .bottom_son{
-    width: calc(25% - 10px);
+    width: calc(25% - 20px);
     height: 200px;
     background-color: #7193ca;
     margin: 5px;
     cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 5px;
 }
 #flex_box_bottom #random{
     width: calc(25% - 10px);

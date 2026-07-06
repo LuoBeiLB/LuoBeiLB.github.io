@@ -26,3 +26,20 @@ function createElement(style,innerH) {
     fatherdiv.appendChild(sondiv);
     return fatherdiv;
 }
+
+// 添加点击事件
+function addevent() {
+    let bottom_son = document.querySelectorAll('.bottom_son');
+    for (let index = 0; index < bottom_son.length; index++) {
+        const element = bottom_son[index];
+        element.addEventListener('click', (e) => {
+            const dataName = e.target.closest('.bottom_son').getAttribute('data-name');
+            if (dataName === 'random') {
+                window.location.href = "/html/random.html";
+            } else if (dataName === 'note') {
+                const dataId = e.target.closest('.bottom_son').getAttribute('data-id');
+                window.location.href = `/html/notedetail.html?id=${dataId}`;
+            }
+        })
+    }
+}
